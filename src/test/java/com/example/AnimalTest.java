@@ -2,6 +2,7 @@ package com.example;
 
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,13 +11,12 @@ import java.util.List;
 
 
 @RunWith(Parameterized.class)
-public class AnimalGetFoodTest {
+public class AnimalTest {
     private String animalType;
     private List<String> validFood;
     private String exceptionMessage;
-    private String familyText;
 
-    public AnimalGetFoodTest(String animalType, List<String> validFood, String exceptionMessage) {
+    public AnimalTest(String animalType, List<String> validFood, String exceptionMessage) {
         this.animalType = animalType;
         this.validFood = validFood;
         this.exceptionMessage = exceptionMessage;
@@ -31,10 +31,10 @@ public class AnimalGetFoodTest {
         };
     }
 
-    static Animal animal;
+    Animal animal;
 
-    @Parameterized.BeforeParam
-    public static void setUp() {
+    @Before
+    public void setUp() {
         animal = new Animal();
     }
 
@@ -46,5 +46,11 @@ public class AnimalGetFoodTest {
         } else {
             Assert.assertThrows(exceptionMessage, Exception.class, () -> animal.getFood(animalType));
         }
+    }
+
+    @Test
+    public void getFamilyTest(){
+        Assert.assertEquals("Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи",
+                animal.getFamily());
     }
 }

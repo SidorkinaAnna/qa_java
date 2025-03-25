@@ -1,12 +1,13 @@
 package com.example;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Feline extends Animal implements Predator {
 
     @Override
     public List<String> eatMeat() throws Exception {
-        return getFood("Хищник");
+        return this.getFood("Хищник");
     }
 
     @Override
