@@ -12,9 +12,9 @@ import java.util.List;
 
 @RunWith(Parameterized.class)
 public class AnimalTest {
-    private String animalType;
-    private List<String> validFood;
-    private String exceptionMessage;
+    private final String animalType;
+    private final List<String> validFood;
+    private final String exceptionMessage;
 
     public AnimalTest(String animalType, List<String> validFood, String exceptionMessage) {
         this.animalType = animalType;

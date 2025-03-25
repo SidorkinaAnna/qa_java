@@ -11,7 +11,7 @@ import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-    private String sex = "Самка";
+    private final String sex = "Самка";
     @Mock
     private LionBehavior lionBehavior;
 

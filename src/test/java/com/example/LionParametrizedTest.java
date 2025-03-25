@@ -7,10 +7,10 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class LionParametrizedTest {
-    private String sex;
-    private boolean expectedHasMane;
+    private final String sex;
+    private final boolean expectedHasMane;
 
-    private LionBehavior lionBehavior = null;
+    private final LionBehavior lionBehavior = null;
 
 
     public LionParametrizedTest(String sex, boolean expectedHasMane) {
